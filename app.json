@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "DragonDex",
+    "slug": "dragondex",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0D47A1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#F57C00"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

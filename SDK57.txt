@@ -1,0 +1,4 @@
+DragonDex atualizado para Expo SDK 57.
+Expo: ~57.0.23
+React: 19.2.3
+React Native: 0.86.3
