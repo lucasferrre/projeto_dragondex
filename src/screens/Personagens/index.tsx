@@ -61,13 +61,10 @@ export default function PersonagensScreen({ navigation }: Props) {
     return characters.filter((character) => {
       const originalName = character.name.toLowerCase();
       const portugueseName = translateCharacterName(
-        character.name
+        character.name,
       ).toLowerCase();
 
-      return (
-        originalName.includes(search) ||
-        portugueseName.includes(search)
-      );
+      return originalName.includes(search) || portugueseName.includes(search);
     });
   }, [characters, query]);
 
@@ -93,22 +90,14 @@ export default function PersonagensScreen({ navigation }: Props) {
 
                   <TouchableOpacity
                     style={styles.homeButton}
-                    onPress={() =>
-                      navigation.navigate("BoasVindasScreen")
-                    }
+                    onPress={() => navigation.navigate("BoasVindasScreen")}
                     activeOpacity={0.8}
                   >
-                    <Ionicons
-                      name="home"
-                      size={22}
-                      color="white"
-                    />
+                    <Ionicons name="home" size={22} color="white" />
                   </TouchableOpacity>
                 </View>
 
-                <Text style={styles.headerTitle}>
-                  Personagens
-                </Text>
+                <Text style={styles.headerTitle}>Personagens</Text>
 
                 <Text style={styles.headerSubtitle}>
                   Explore os personagens do universo Dragon Ball
@@ -126,22 +115,14 @@ export default function PersonagensScreen({ navigation }: Props) {
               <SectionSwitcher
                 active="characters"
                 onCharacters={() => undefined}
-                onPlanets={() =>
-                  navigation.replace("PlanetasScreen")
-                }
+                onPlanets={() => navigation.replace("PlanetasScreen")}
               />
 
               <View style={styles.sectionHeader}>
-                <Text style={styles.sectionTitle}>
-                  Sugestões
-                </Text>
+                <Text style={styles.sectionTitle}>Sugestões</Text>
 
-                <TouchableOpacity
-                  onPress={() => setQuery("")}
-                >
-                  <Text style={styles.showAll}>
-                    Ver todos
-                  </Text>
+                <TouchableOpacity onPress={() => setQuery("")}>
+                  <Text style={styles.showAll}>Ver todos</Text>
                 </TouchableOpacity>
               </View>
 
@@ -152,31 +133,20 @@ export default function PersonagensScreen({ navigation }: Props) {
                     style={styles.chip}
                     onPress={() => setQuery(name)}
                   >
-                    <Text style={styles.chipText}>
-                      {name}
-                    </Text>
+                    <Text style={styles.chipText}>{name}</Text>
                   </TouchableOpacity>
                 ))}
               </View>
 
-              {loading && (
-                <LoadingState label="Buscando personagens..." />
-              )}
+              {loading && <LoadingState label="Buscando personagens..." />}
 
-              {error && (
-                <ErrorState
-                  message={error}
-                  onRetry={loadCharacters}
-                />
-              )}
+              {error && <ErrorState message={error} onRetry={loadCharacters} />}
 
-              {!loading &&
-                !error &&
-                filteredCharacters.length === 0 && (
-                  <Text style={styles.emptyText}>
-                    Nenhum personagem encontrado.
-                  </Text>
-                )}
+              {!loading && !error && filteredCharacters.length === 0 && (
+                <Text style={styles.emptyText}>
+                  Nenhum personagem encontrado.
+                </Text>
+              )}
             </View>
           </>
         }
@@ -186,12 +156,9 @@ export default function PersonagensScreen({ navigation }: Props) {
               style={styles.card}
               activeOpacity={0.88}
               onPress={() =>
-                navigation.navigate(
-                  "PersonagemDetalhesScreen",
-                  {
-                    characterId: item.id,
-                  }
-                )
+                navigation.navigate("PersonagemDetalhesScreen", {
+                  characterId: item.id,
+                })
               }
             >
               <View style={styles.imageBox}>
@@ -207,26 +174,15 @@ export default function PersonagensScreen({ navigation }: Props) {
                   {translateCharacterName(item.name)}
                 </Text>
 
-                <Info
-                  label="Raça"
-                  value={translateRace(item.race)}
-                />
+                <Info label="Raça" value={translateRace(item.race)} />
 
-                <Info
-                  label="Gênero"
-                  value={translateGender(item.gender)}
-                />
+                <Info label="Gênero" value={translateGender(item.gender)} />
 
-                <Info
-                  label="Ki"
-                  value={item.ki}
-                />
+                <Info label="Ki" value={item.ki} />
 
                 <Info
                   label="Afiliação"
-                  value={translateAffiliation(
-                    item.affiliation
-                  )}
+                  value={translateAffiliation(item.affiliation)}
                 />
               </View>
             </TouchableOpacity>
@@ -237,13 +193,7 @@ export default function PersonagensScreen({ navigation }: Props) {
   );
 }
 
-function Info({
-  label,
-  value,
-}: {
-  label: string;
-  value: string;
-}) {
+function Info({ label, value }: { label: string; value: string }) {
   return (
     <View style={styles.infoRow}>
       <Text style={styles.infoLabel}>{label}</Text>

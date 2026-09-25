@@ -23,7 +23,10 @@ import {
   translateRace,
 } from "../../utils/translations";
 
-type Props = NativeStackScreenProps<RootStackParamList, "PersonagemDetalhesScreen">;
+type Props = NativeStackScreenProps<
+  RootStackParamList,
+  "PersonagemDetalhesScreen"
+>;
 
 export default function PersonagemDetalhesScreen({ route, navigation }: Props) {
   const [character, setCharacter] = useState<CharacterDetails | null>(null);
@@ -65,8 +68,14 @@ export default function PersonagemDetalhesScreen({ route, navigation }: Props) {
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
       <View style={styles.mainCard}>
-        <Image source={{ uri: character.image }} style={styles.image} resizeMode="contain" />
-        <Text style={styles.name}>{translateCharacterName(character.name)}</Text>
+        <Image
+          source={{ uri: character.image }}
+          style={styles.image}
+          resizeMode="contain"
+        />
+        <Text style={styles.name}>
+          {translateCharacterName(character.name)}
+        </Text>
         <Text style={styles.race}>{translateRace(character.race)}</Text>
       </View>
 
@@ -74,7 +83,10 @@ export default function PersonagemDetalhesScreen({ route, navigation }: Props) {
         <Info label="Gênero" value={translateGender(character.gender)} />
         <Info label="Ki" value={character.ki} />
         <Info label="Ki máximo" value={character.maxKi} />
-        <Info label="Afiliação" value={translateAffiliation(character.affiliation)} />
+        <Info
+          label="Afiliação"
+          value={translateAffiliation(character.affiliation)}
+        />
       </View>
 
       <View style={styles.infoCard}>

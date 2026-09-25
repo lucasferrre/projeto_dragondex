@@ -8,14 +8,20 @@ type Props = {
   onPlanets: () => void;
 };
 
-export default function SectionSwitcher({ active, onCharacters, onPlanets }: Props) {
+export default function SectionSwitcher({
+  active,
+  onCharacters,
+  onPlanets,
+}: Props) {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         style={[styles.button, active === "characters" && styles.activeButton]}
         onPress={onCharacters}
       >
-        <Text style={[styles.text, active === "characters" && styles.activeText]}>
+        <Text
+          style={[styles.text, active === "characters" && styles.activeText]}
+        >
           Personagens
         </Text>
       </TouchableOpacity>

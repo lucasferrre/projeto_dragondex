@@ -19,10 +19,7 @@ import SectionSwitcher from "../../components/SectionSwitcher";
 import LoadingState from "../../components/LoadingState";
 import ErrorState from "../../components/ErrorState";
 import { colors } from "../../utils/theme";
-import {
-  destroyedLabel,
-  translatePlanetName,
-} from "../../utils/translations";
+import { destroyedLabel, translatePlanetName } from "../../utils/translations";
 import { getPlanetDescriptionPt } from "../../utils/descriptions.pt";
 
 type Props = NativeStackScreenProps<RootStackParamList, "PlanetasScreen">;
@@ -57,14 +54,9 @@ export default function PlanetasScreen({ navigation }: Props) {
 
     return planets.filter((planet) => {
       const originalName = planet.name.toLowerCase();
-      const portugueseName = translatePlanetName(
-        planet.name
-      ).toLowerCase();
+      const portugueseName = translatePlanetName(planet.name).toLowerCase();
 
-      return (
-        originalName.includes(search) ||
-        portugueseName.includes(search)
-      );
+      return originalName.includes(search) || portugueseName.includes(search);
     });
   }, [planets, query]);
 
@@ -90,16 +82,10 @@ export default function PlanetasScreen({ navigation }: Props) {
 
                   <TouchableOpacity
                     style={styles.homeButton}
-                    onPress={() =>
-                      navigation.navigate("BoasVindasScreen")
-                    }
+                    onPress={() => navigation.navigate("BoasVindasScreen")}
                     activeOpacity={0.8}
                   >
-                    <Ionicons
-                      name="home"
-                      size={22}
-                      color="white"
-                    />
+                    <Ionicons name="home" size={22} color="white" />
                   </TouchableOpacity>
                 </View>
 
@@ -120,32 +106,19 @@ export default function PlanetasScreen({ navigation }: Props) {
 
               <SectionSwitcher
                 active="planets"
-                onCharacters={() =>
-                  navigation.replace("PersonagensScreen")
-                }
+                onCharacters={() => navigation.replace("PersonagensScreen")}
                 onPlanets={() => undefined}
               />
 
               <Text style={styles.title}>Planetas</Text>
 
-              {loading && (
-                <LoadingState label="Buscando planetas..." />
-              )}
+              {loading && <LoadingState label="Buscando planetas..." />}
 
-              {error && (
-                <ErrorState
-                  message={error}
-                  onRetry={loadPlanets}
-                />
-              )}
+              {error && <ErrorState message={error} onRetry={loadPlanets} />}
 
-              {!loading &&
-                !error &&
-                filteredPlanets.length === 0 && (
-                  <Text style={styles.empty}>
-                    Nenhum planeta encontrado.
-                  </Text>
-                )}
+              {!loading && !error && filteredPlanets.length === 0 && (
+                <Text style={styles.empty}>Nenhum planeta encontrado.</Text>
+              )}
             </View>
           </>
         }
@@ -166,27 +139,17 @@ export default function PlanetasScreen({ navigation }: Props) {
             />
 
             <View style={styles.cardText}>
-              <Text style={styles.name}>
-                {translatePlanetName(item.name)}
-              </Text>
+              <Text style={styles.name}>{translatePlanetName(item.name)}</Text>
 
-              <Text
-                style={styles.description}
-                numberOfLines={3}
-              >
-                {getPlanetDescriptionPt(
-                  item,
-                  item.description
-                )}
+              <Text style={styles.description} numberOfLines={3}>
+                {getPlanetDescriptionPt(item, item.description)}
               </Text>
 
               <Text
                 style={[
                   styles.status,
                   {
-                    color: item.isDestroyed
-                      ? colors.danger
-                      : colors.success,
+                    color: item.isDestroyed ? colors.danger : colors.success,
                   },
                 ]}
               >

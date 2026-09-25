@@ -21,7 +21,10 @@ import {
 } from "../../utils/translations";
 import { getPlanetDescriptionPt } from "../../utils/descriptions.pt";
 
-type Props = NativeStackScreenProps<RootStackParamList, "PlanetaDetalhesScreen">;
+type Props = NativeStackScreenProps<
+  RootStackParamList,
+  "PlanetaDetalhesScreen"
+>;
 
 export default function PlanetaDetalhesScreen({ route, navigation }: Props) {
   const [planet, setPlanet] = useState<PlanetDetails | null>(null);
@@ -62,7 +65,11 @@ export default function PlanetaDetalhesScreen({ route, navigation }: Props) {
 
   return (
     <ScrollView style={styles.screen} contentContainerStyle={styles.content}>
-      <Image source={{ uri: planet.image }} style={styles.heroImage} resizeMode="cover" />
+      <Image
+        source={{ uri: planet.image }}
+        style={styles.heroImage}
+        resizeMode="cover"
+      />
 
       <View style={styles.card}>
         <Text style={styles.name}>{translatePlanetName(planet.name)}</Text>

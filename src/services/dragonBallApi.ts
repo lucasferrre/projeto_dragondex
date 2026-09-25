@@ -19,7 +19,9 @@ async function request<T>(url: string): Promise<T> {
 }
 
 export async function getCharacters(): Promise<Character[]> {
-  const data = await request<PaginatedResponse<Character>>("/characters?limit=58");
+  const data = await request<PaginatedResponse<Character>>(
+    "/characters?limit=58",
+  );
   return data.items;
 }
 

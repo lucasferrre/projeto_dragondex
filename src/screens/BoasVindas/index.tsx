@@ -12,10 +12,7 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../types/navigation";
 import { colors } from "../../utils/theme";
 
-type Props = NativeStackScreenProps<
-  RootStackParamList,
-  "BoasVindasScreen"
->;
+type Props = NativeStackScreenProps<RootStackParamList, "BoasVindasScreen">;
 
 export default function BoasVindasScreen({ navigation }: Props) {
   return (
@@ -33,27 +30,20 @@ export default function BoasVindasScreen({ navigation }: Props) {
           <Text style={styles.title}>Bem-vindo!</Text>
 
           <Text style={styles.subtitle}>
-            Um aplicativo simples para consultar informações do universo Dragon Ball.
+            Um aplicativo simples para consultar informações do universo Dragon
+            Ball.
           </Text>
         </View>
       </ImageBackground>
 
       <View style={styles.content}>
-        <Text style={styles.sectionTitle}>
-          O que você pode fazer?
-        </Text>
+        <Text style={styles.sectionTitle}>O que você pode fazer?</Text>
 
         <View style={styles.item}>
-          <Ionicons
-            name="people"
-            size={26}
-            color={colors.orange}
-          />
+          <Ionicons name="people" size={26} color={colors.orange} />
 
           <View style={styles.itemText}>
-            <Text style={styles.itemTitle}>
-              Ver personagens
-            </Text>
+            <Text style={styles.itemTitle}>Ver personagens</Text>
 
             <Text style={styles.itemDescription}>
               Consulte imagem, raça, gênero, Ki, afiliação e descrição.
@@ -62,16 +52,10 @@ export default function BoasVindasScreen({ navigation }: Props) {
         </View>
 
         <View style={styles.item}>
-          <Ionicons
-            name="planet"
-            size={26}
-            color={colors.blue}
-          />
+          <Ionicons name="planet" size={26} color={colors.blue} />
 
           <View style={styles.itemText}>
-            <Text style={styles.itemTitle}>
-              Conhecer planetas
-            </Text>
+            <Text style={styles.itemTitle}>Conhecer planetas</Text>
 
             <Text style={styles.itemDescription}>
               Veja os planetas, suas descrições e se foram destruídos.
