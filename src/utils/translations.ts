@@ -68,9 +68,21 @@ const planetNameTranslations: Record<string, string> = {
   "beerus planet": "Planeta do Bills",
   "planeta beerus": "Planeta do Bills",
   "planeta de bills": "Planeta do Bills",
-  "freezer no 79": "Planeta Freeza nº 79",
+  "planeta del Gran Kaio": "Planeta do Grande Kaio",
+  "planeta del gran kaio": "Planeta do Grande Kaio",
+  "Nuevo Planeta Tsufrui": "Novo Planeta Tsufrui",
+  "nuevo planeta tsufrui": "Novo Planeta Tsufrui",
+  "Templo móvil del Rey de Todo": "Templo móvel do Rei de Tudo",
+  "templo movil del rey de todo": "Templo móvel do Rei de Tudo",
+  "Otro Mundo": "Outro Mundo",
+  "otro mundo": "Outro Mundo",
+  "Nucleo del Mundo": "Núcleo do Mundo",
+  "nucleo del mundo": "Núcleo do Mundo",
+  "freezer no. 79": "Planeta Freeza nº 79",
+  "Freezer No. 79": "Planeta Freeza nº 79",
   "frieza no 79": "Planeta Freeza nº 79",
-  "planeta freezer no 79": "Planeta Freeza nº 79",
+  "Desconocido": "Desconhecido",
+  "desconocido": "Desconhecido",
 };
 
 function normalize(value: string) {
